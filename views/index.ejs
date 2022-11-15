@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+<style>
+    .container{
+        background-color: aquamarine;
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Budgtr ALL</h1>
+        <% let bankAccount = 0; 
+        for(let i = 0; i < budgetInfo.length; i++) { 
+             bankAccount += parseInt(budgetInfo[i].amount)
+             } 
+             console.log("Account Total: $", bankAccount) %>
+             <h3>Account Total: $ <%= bankAccount %> </h3>
+       
+       <h5>List Of Transactions</h5>
+       <a href="/budget/new"><button>New Item</button></a>
+       <table>
+    <% for(let i = 0; i < budgetInfo.length; i++) { %>
+        <tr>
+          <td> <%=  budgetInfo[i].date ; %> </td>
+          <td> <a href="/budget/<%= [i] %>"><%= budgetInfo[i].name ; %></a> </td>
+          <td> <%=  budgetInfo[i].from ; %> </td>
+          <td> <%=  budgetInfo[i].amount ; %> </td>
+          <td> <%=  budgetInfo[i].tags ; %> </td>
+        </tr> 
+  <%  } %> 
+    </table>
+       
+</body>
+</html>
